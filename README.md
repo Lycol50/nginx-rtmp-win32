@@ -7,8 +7,8 @@ nginx-rtmp-win32
 * pcre-8.42
 * zlib-1.2.11
 
-# dev分支说明
-在1.2.1基础上做一些小修改，原版请用master分支
+# dev branch description
+Make some minor modifications on the basis of 1.2.1, please use the master branch for the original version
 
 # configure arguments
 ```
@@ -32,25 +32,35 @@ nk_module --with-http_slice_module --with-mail --with-stream --with-openssl=objs
 _ssl_module --with-stream_ssl_module --add-module=objs/lib/nginx-rtmp-module/
 ```
 
-# 使用方法
-双击nginx.exe
-# 简要说明
-conf/nginx.conf 为配置文件实例  
-RTMP监听 1935 端口，启用live 和hls 两个application  
-HTTP监听 8080 端口，
-* :8080/stat 查看stream状态  
-* :8080/index.html 为一个直播播放与直播发布测试器
-* :8080/vod.html 为一个支持RTMP和HLS点播的测试器
+# Instructions
+Double-click nginx.exe
+# brief introduction
+conf/nginx.conf is a configuration file instance
+RTMP listens on port 1935, enabling live and hls applications
+HTTP listens on port 8080,
+* :8080/stat View stream status
+* :8080/index.html for a live broadcast and live release tester
+* :8080/vod.html is a tester that supports RTMP and HLS VOD
 
-# 注意
-不支持exec
+# Notice
+exec is not supported
 
-# 直播测试工具 
-内置了一个方便测试的pc端推流于播放的工具
+# Live test tool
+There is a built-in PC-side push-to-play tool for easy testing
 ![img](https://github.com/NodeMedia/NodeMediaDevClient/raw/master/QQ20160310-0.png)
-源码在此:https://github.com/NodeMedia/NodeMediaDevClient
+The source code is here: https://github.com/NodeMedia/NodeMediaDevClient
 
-# H265
-支持ID=12的h265流,需要客户端支持.
+#H265
+Support h265 stream with ID=12, client support is required.
 
+# video tutorial
 https://www.youtube.com/watch?v=O4JBNkpeTYQ
+
+# stunnel config for facebook
+```conf
+[fb-live]
+client = yes
+accept = 127.0.0.1:19350
+connect = live-api-s.facebook.com:443
+verifyChain = no
+```
