@@ -7,9 +7,6 @@ nginx-rtmp-win32
 * pcre-8.42
 * zlib-1.2.11
 
-# dev branch description
-Make some minor modifications on the basis of 1.2.1, please use the master branch for the original version
-
 # configure arguments
 ```
 nginx version: nginx/1.14.1
@@ -37,21 +34,9 @@ Double-click nginx.exe
 # brief introduction
 conf/nginx.conf is a configuration file instance
 RTMP listens on port 1935, enabling live and hls applications
-HTTP listens on port 8080,
-* :8080/stat View stream status
-* :8080/index.html for a live broadcast and live release tester
-* :8080/vod.html is a tester that supports RTMP and HLS VOD
-
-# Notice
-exec is not supported
-
-# Live test tool
-There is a built-in PC-side push-to-play tool for easy testing
-![img](https://github.com/NodeMedia/NodeMediaDevClient/raw/master/QQ20160310-0.png)
-The source code is here: https://github.com/NodeMedia/NodeMediaDevClient
-
-#H265
-Support h265 stream with ID=12, client support is required.
+HTTP listens on port 8443,
+* :8443/stat - View stream status
+* :8443/stream - Stream Monitor over HTML5-DASH
 
 # video tutorial
 https://www.youtube.com/watch?v=O4JBNkpeTYQ
