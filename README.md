@@ -33,7 +33,7 @@ _ssl_module --with-stream_ssl_module --add-module=objs/lib/nginx-rtmp-module/
 Double-click nginx.exe
 # brief introduction
 conf/nginx.conf is a configuration file instance
-RTMP listens on port 1935, enabling live and hls applications
+RTMP listens on port 1935, enabling live and dash applications
 HTTP listens on port 8443,
 * :8443/stat - View stream status
 * :8443/stream - Stream Monitor over HTML5-DASH
